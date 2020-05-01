@@ -1,0 +1,78 @@
+@inherits ClockModel
+@using Microsoft.AspNetCore.Components.Web;
+
+<style>
+.sec {
+    stroke-dasharray: @sec_circumference;
+    stroke-dashoffset: @sec_circ_offset;
+}  
+.min{
+    stroke-dasharray: @min_circumference; 
+    stroke-dashoffset: @min_circ_offset;
+}      
+.hr{
+    stroke-dasharray: @hr_circumference; 
+    stroke-dashoffset: @hr_circ_offset;
+}      
+</style>
+
+<svg id="clock" viewBox="@viewBox" width="@SVGwidth" height="@SVGheight" preserveAspectRatio="xMinYMin yMinMin">
+    <circle id="face" cx="50" cy="50" r="43" /> <!-- the clock face -->
+
+    <g id="ticks">
+        <!-- 12 hour tick marks -->
+        <line x1='50' y1='5.000' x2='50.00' y2='10.00' />
+        <line x1='72.50' y1='11.03' x2='70.00' y2='15.36' />
+        <line x1='88.97' y1='27.50' x2='84.64' y2='30.00' />
+        <line x1='95.00' y1='50.00' x2='90.00' y2='50.00' />
+        <line x1='88.97' y1='72.50' x2='84.64' y2='70.00' />
+        <line x1='72.50' y1='88.97' x2='70.00' y2='84.64' />
+        <line x1='50.00' y1='95.00' x2='50.00' y2='90.00' />
+        <line x1='27.50' y1='88.97' x2='30.00' y2='84.64' />
+        <line x1='11.03' y1='72.50' x2='15.36' y2='70.00' />
+        <line x1='5.000' y1='50.00' x2='10.00' y2='50.00' />
+        <line x1='11.03' y1='27.50' x2='15.36' y2='30.00' />
+        <line x1='27.50' y1='11.03' x2='30.00' y2='15.36' />
+    </g>
+
+    <g id="numbers">
+        <!-- Number the cardinal directions-->
+        <text x="50" y="18">12</text>
+        <text x="85" y="53">3</text>
+        <text x="50" y="88">6</text>
+        <text x="15" y="53">9</text>
+    </g>
+<!--@DrawCounter() -->
+
+    <!-- Draw hands pointing straight up. We rotate them in the code. -->
+    <g id="hands">
+        <!-- Add shadows to the hands -->
+        @hourhand
+        @hourhandShadow
+        @minutehand
+        @secondhandShadow
+        @minutehandShadow
+        @electronicDisplayer
+        @ChildContent
+        
+       <line id="secondhand" x1="50" y1="50" x2="50" y2="16" transform="@transform_second"  @onclick="((args) => IncrementBuilder(args, m_sec))"/>
+        
+    </g>
+    <g id="clockCirlces">
+        <circle class="sec" cx="50" cy="50" r="@sec_radius" fill="none" stroke="@sec_color" stroke-width="2"
+            transform="rotate(-90 50 50)" />
+        <circle class="min" cx="50" cy="50" r="@min_radius" fill="none" stroke="@min_color" stroke-width="2"
+            transform="rotate(-90 50 50)"  />
+        <circle class="hr" cx="50" cy="50" r="@hr_radius" fill="none" stroke="@hr_color" stroke-width="2"
+            transform="rotate(-90 50 50)"  />
+    </g>
+    
+</svg>
+@code{
+    metrics m_sec = new metrics
+    {
+        Name = "secondhand",
+        klasa = "n/a",
+        number = 205
+    };
+}

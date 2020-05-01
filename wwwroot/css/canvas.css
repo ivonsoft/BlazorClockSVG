@@ -1,0 +1,39 @@
+﻿.colours{
+    padding: 0.1em;
+    width: 200px;
+}
+#cnv_zegar{
+    position: absolute;
+    z-index: 1;
+}
+.colour {
+   /* background-color: #4CAF50;  Green */
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#colour_F4908E{
+    background-color: #F4908E;
+    
+}
+#colour_F2F097{
+    background-color: #F2F097;
+}
+#colour_88B0DC{
+    background-color: #88B0DC;
+}
+#colour_F7B5D1{
+    background-color: #F7B5D1;
+}
+#colour_53C4AF{
+    background-color: #53C4AF;
+}
+#colour_FDE38C{
+    background-color: #FDE38C;
+}

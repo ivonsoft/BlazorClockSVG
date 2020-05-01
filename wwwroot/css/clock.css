@@ -1,0 +1,106 @@
+/*@import url(http://fonts.googleapis.com/css?family=Ubuntu:700);
+*/
+/*body {
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    background: hsla(0, 5%, 5%, 1);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: -webkit-linear-gradient(left bottom, hsla(0, 5%, 15%, 0.5), hsla(0, 5%, 5%, 1));
+    background-image: linear-gradient(to right top, hsla(0, 5%, 15%, 0.5), hsla(0, 5%, 5%, 1));
+}
+*/
+
+h2 {
+    text-align: center;
+    color: hsla(255, 255%, 255%, 1);
+    margin-top: 4%;
+    font-size: 2em;
+}
+
+/* These CSS styles all apply to the SVG elements defined below */
+#clock {
+    /* styles for everything in the clock */
+    stroke: black;
+    stroke-width: 0.1;
+    /* black lines */
+    stroke-linecap: round;
+    /* with rounded ends */
+    fill: #eef;
+    /* on a light blue gray background */
+    overflow: hidden;
+    border-radius: 90px;
+    margin: 5px;
+    padding: 5px;
+   /* font-family: 'Ubuntu', sans-serif;*/
+  /* font-family: 'Digital-7';*/
+   /* background: hsla(0, 5%, 5%, 1); */
+    background-repeat: no-repeat;
+   /* background-attachment: fixed; */
+    background-image: -webkit-linear-gradient(left bottom, hsla(0, 5%, 15%, 0.1), hsla(0, 5%, 5%, 0.4));
+    background-image: linear-gradient(to right top, hsla(0, 5%, 15%, 0.1), hsla(0, 5%, 5%, 0.4));
+}
+
+#face {
+    stroke-width: 0.3px;
+}
+
+/* clock face outline */
+#ticks {
+    stroke-width: 2;
+}
+
+/* lines that mark each hour */
+#hourhand {
+    stroke-width: 3px;
+    stroke: rgba(60, 61, 231, .7);
+}
+
+.cien_hours {
+    stroke: rgba(60, 61, 231, .3);
+    fill: rgba(60, 61, 231, .3);
+    stroke-width: 3;
+}
+
+/* wide hour hand */
+#minutehand {
+    stroke-width: 2px;
+    fill: rgba(88, 251, 88, .7);
+}
+
+.cien_minutes {
+    stroke: rgba(88, 251, 88, .2);
+    fill: rgba(88, 251, 88, .2);
+    stroke-width: 3;
+    z-index: 2;
+}
+
+.cien_seconds {
+    stroke: rgba(241, 56, 51, 0.1);
+    fill: rgba(241, 56, 51, 0.1);
+    stroke-width: 1;
+}
+.zegar_text_digital{
+    font-size:0.8em;
+    stroke: rgba(41,156,151,0.8);
+    fill: rgba(255,250,251,1);
+    text-align: center;
+    stroke-width: 1;
+    }
+/* narrow minute hand */
+#secondhand {
+    stroke-width: 1px;
+    stroke: rgba(241, 56, 51, 0.9);
+}
+
+#numbers {
+    /* how to draw the numbers */
+    font-family: sans-serif;
+    font-size: 7pt;
+    font-weight: bold;
+    text-anchor: middle;
+    stroke: none;
+    fill: black;
+}

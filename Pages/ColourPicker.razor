@@ -1,0 +1,19 @@
+<div class="colours">
+    @foreach (var colour in Colours)
+    {   
+        var kolor = @colour.Replace("#", "");
+        <button class="colour"
+                id = "colour_@kolor"
+                @onclick="@OnClick(colour)"
+                @key="@colour">
+        </button>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public Func<string, Action<MouseEventArgs>> OnClick { get; set; }
+
+    [Parameter]
+    public IEnumerable<string> Colours { get; set; }
+}
